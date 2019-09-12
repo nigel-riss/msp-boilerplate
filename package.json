@@ -1,0 +1,30 @@
+{
+  "name": "msp-boilerplate",
+  "version": "1.0.0",
+  "description": "My Standard Projects Boilerplate",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nigel-riss/msp-boilerplate.git"
+  },
+  "author": "Yuriy Kurenkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nigel-riss/msp-boilerplate/issues"
+  },
+  "homepage": "https://github.com/nigel-riss/msp-boilerplate#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-embed-svg": "^1.1.5",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "webpack-stream": "^5.2.1"
+  }
+}
