@@ -24,6 +24,30 @@ const dirs = {
 
 
 /**
+ * Starts Browsersync server
+ */
+const startServer = () => {
+  server.init({
+    server: {
+      baseDir: dirs.docs,
+    },
+    port: 1337,
+  });
+};
+
+
+/**
+ * Reloads Browsersync server
+ * @param {function} cb callback
+ */
+const reloadServer = (cb) => {
+  server.reload();
+
+  cb();
+};
+
+
+/**
  * Render html from pug
  * @param {function} cb callback
  */
@@ -54,6 +78,21 @@ const compileStyles = (cb) => {
 }
 
 
+/**
+ * Watches files for changes
+ */
+const watch = () => {
+  startServer();
+  gulp.watch(dirs.pugAll, gulp.series(renderPug, reloadServer));
+  gulp.watch(dirs.svg, gulp.series(renderPug, reloadServer));
+  gulp.watch(dirs.scssAll, gulp.series(compileStyles));
+}
+
+
 // Single tasks
 exports.renderPug = renderPug;
 exports.compileStyles = compileStyles;
+exports.startServer = startServer;
+
+// Watch task
+exports.watch = watch;
