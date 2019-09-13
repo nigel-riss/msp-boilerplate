@@ -1,0 +1,39 @@
+///////////////////////////////////////
+//            Breakpoints            //
+///////////////////////////////////////
+
+
+// Explicit mobile breakpoint
+@mixin atMobile {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+// Tablets portrait
+@mixin atTablet {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
+
+// small desktop and tablets landscape
+@mixin atDesktopS {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+// medium desktop and generic laptops
+@mixin atDesktopM {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// large desktop
+@mixin atDesktopL {
+  @media (min-width: 1500px) {
+    @content;
+  }
+}
