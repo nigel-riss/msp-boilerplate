@@ -166,3 +166,68 @@ body {
   src: url("./fonts/subset-Montserrat-Regular.woff2") format("woff2"), url("./fonts/subset-Montserrat-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal; }
+
+.header__menu-button {
+  position: relative;
+  padding: 0;
+  font-size: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none; }
+
+.menu-button {
+  position: relative;
+  height: 128px;
+  width: 128px; }
+
+.menu-button__top,
+.menu-button__middle,
+.menu-button__bottom {
+  position: absolute;
+  transform-origin: center center; }
+
+.menu-button--close .menu-button__top {
+  transform: rotate(-45deg) translate(0, 27px); }
+
+.menu-button--close .menu-button__bottom {
+  transform: rotate(45deg) translate(0, -27px); }
+
+@keyframes close-top {
+  0% {
+    top: 4px; }
+  50% {
+    top: 12px;
+    transform: rotate(0deg); }
+  100% {
+    top: 12px;
+    transform: rotate(45deg); } }
+
+@keyframes close-bottom {
+  0% {
+    top: 20px; }
+  50% {
+    top: 12px;
+    transform: rotate(0deg); }
+  100% {
+    top: 12px;
+    transform: rotate(-45deg); } }
+
+@keyframes open-top {
+  0% {
+    top: 12px;
+    transform: rotate(45deg); }
+  50% {
+    top: 12px;
+    transform: rotate(0deg); }
+  100% {
+    top: 4px; } }
+
+@keyframes open-bottom {
+  0% {
+    top: 12px;
+    transform: rotate(-45deg); }
+  50% {
+    top: 12px;
+    transform: rotate(0deg); }
+  100% {
+    top: 20px; } }

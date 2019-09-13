@@ -1,0 +1,101 @@
+
+
+// Vars
+$buttonWidth: 128px;
+$buttonHeight: 128px;
+
+
+.menu-button {
+  // positioning
+  position: relative;
+
+  // box model
+  height: $buttonHeight;
+  width: $buttonWidth;
+
+  // border: 2px dashed fuchsia;
+}
+
+.menu-button__top,
+.menu-button__middle,
+.menu-button__bottom {
+  // positioning
+  position: absolute;
+  transform-origin: center center;
+  // border: 2px dashed fuchsia;
+}
+
+.menu-button--close {
+  .menu-button__top {
+    transform: rotate(-45deg) translate(0, 27px);
+  }
+
+  .menu-button__bottom {
+    transform: rotate(45deg) translate(0, -27px);
+  }
+}
+
+// Menu button animations
+@keyframes close-top {
+  0% {
+      top: 4px;
+  }
+
+  50% {
+      top: 12px;
+      transform: rotate(0deg);
+  }
+
+  100% {
+      top: 12px;
+      transform: rotate(45deg);
+  }
+}
+
+@keyframes close-bottom {
+  0% {
+      top: 20px;
+  }
+
+  50% {
+      top: 12px;
+      transform: rotate(0deg);
+  }
+
+  100% {
+      top: 12px;
+      transform: rotate(-45deg);
+  }
+}
+
+@keyframes open-top {
+  0% {
+      top: 12px;
+      transform: rotate(45deg);
+  }
+  
+  50% {
+      top: 12px;
+      transform: rotate(0deg);
+  }
+  
+  100% {
+      top: 4px;
+  }
+}
+
+@keyframes open-bottom {
+  0% {
+      top: 12px;
+      transform: rotate(-45deg);
+  }
+  
+  50% {
+      top: 12px;
+      transform: rotate(0deg);
+  }
+  
+  100% {
+      top: 20px;
+  }
+}

@@ -72,7 +72,7 @@ const compileStyles = (cb) => {
   gulp.src(dirs.scssMain)
     .pipe(sass())
     .pipe(gulp.dest(dirs.docs))
-    // .pipe(server.reload({stream: true}));
+    .pipe(server.reload({stream: true}));
 
   cb();
 }
