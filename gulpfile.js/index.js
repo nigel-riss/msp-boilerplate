@@ -21,6 +21,16 @@ const dirs = {
 
 
 // Webpack config
+const webpackConfig = {
+  entry: {
+    scripts: './src/js/scripts.js',
+  },
+  output: {
+    filename: '[name].js',
+  },
+  // mode: 'production',
+  mode: 'development',
+};
 
 
 /**
@@ -75,7 +85,20 @@ const compileStyles = (cb) => {
     .pipe(server.reload({stream: true}));
 
   cb();
-}
+};
+
+
+/**
+ * Compiles js code
+ * @param {function} cb callback
+ */
+const compileScripts = (cb) => {
+  gulp.src(dirs.js)
+    .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest(dirs.docs));
+
+  cb();
+};
 
 
 /**
@@ -86,12 +109,14 @@ const watch = () => {
   gulp.watch(dirs.pugAll, gulp.series(renderPug, reloadServer));
   gulp.watch(dirs.svg, gulp.series(renderPug, reloadServer));
   gulp.watch(dirs.scssAll, gulp.series(compileStyles));
-}
+  gulp.watch(dirs.js, gulp.series(compileScripts, reloadServer));
+};
 
 
 // Single tasks
 exports.renderPug = renderPug;
 exports.compileStyles = compileStyles;
+exports.compileScripts = compileScripts;
 exports.startServer = startServer;
 
 // Watch task

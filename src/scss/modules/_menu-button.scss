@@ -22,15 +22,16 @@ $buttonHeight: 128px;
   // positioning
   position: absolute;
   transform-origin: center center;
-  // border: 2px dashed fuchsia;
 }
 
 .menu-button--close {
   .menu-button__top {
+    // positioning
     transform: rotate(-45deg) translate(0, 27px);
   }
 
   .menu-button__bottom {
+    // positioning
     transform: rotate(45deg) translate(0, -27px);
   }
 }
