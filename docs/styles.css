@@ -186,21 +186,25 @@ body {
   position: absolute;
   transform-origin: center center; }
 
-.menu-button--close .menu-button__top {
-  transform: rotate(-45deg) translate(0, 27px); }
+.menu-button__top {
+  animation-name: open-top;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both; }
 
-.menu-button--close .menu-button__bottom {
-  transform: rotate(45deg) translate(0, -27px); }
+.menu-button--close .menu-button__top {
+  animation-name: close-top;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both; }
 
 @keyframes close-top {
   0% {
-    top: 4px; }
+    transform: none; }
   50% {
-    top: 12px;
-    transform: rotate(0deg); }
+    transform: translate(0, 27px); }
   100% {
-    top: 12px;
-    transform: rotate(45deg); } }
+    transform: rotate(-45deg) translate(0, 27px); } }
 
 @keyframes close-bottom {
   0% {
@@ -214,20 +218,16 @@ body {
 
 @keyframes open-top {
   0% {
-    top: 12px;
-    transform: rotate(45deg); }
+    transform: rotate(-45deg) translate(0, 27px); }
   50% {
-    top: 12px;
-    transform: rotate(0deg); }
+    transform: translate(0, 27px); }
   100% {
-    top: 4px; } }
+    transform: none; } }
 
 @keyframes open-bottom {
   0% {
-    top: 12px;
-    transform: rotate(-45deg); }
+    transform: none; }
   50% {
-    top: 12px;
-    transform: rotate(0deg); }
+    transform: translate(0, 27px); }
   100% {
-    top: 20px; } }
+    transform: rotate(45deg) translate(0, 27px); } }

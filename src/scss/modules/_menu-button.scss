@@ -24,32 +24,49 @@ $buttonHeight: 128px;
   transform-origin: center center;
 }
 
+.menu-button__top {
+  // animation
+  animation-name: open-top;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both; 
+}
+
+// .menu-button__bottom {
+//   // animation
+//   animation-name: open-bottom;
+//   animation-duration: 0.5s;
+//   animation-iteration-count: 1;
+//   animation-fill-mode: both; 
+// }
+
 .menu-button--close {
   .menu-button__top {
-    // positioning
-    transform: rotate(-45deg) translate(0, 27px);
+      // animation
+      animation-name: close-top;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
   }
 
-  .menu-button__bottom {
-    // positioning
-    transform: rotate(45deg) translate(0, -27px);
-  }
+  // .menu-button__bottom {
+  //   // positioning
+  //   transform: rotate(45deg) translate(0, -27px);
+  // }
 }
 
 // Menu button animations
 @keyframes close-top {
   0% {
-      top: 4px;
+    transform: none;
   }
-
+  
   50% {
-      top: 12px;
-      transform: rotate(0deg);
+    transform: translate(0, 27px);
   }
-
+  
   100% {
-      top: 12px;
-      transform: rotate(45deg);
+    transform: rotate(-45deg) translate(0, 27px);
   }
 }
 
@@ -71,32 +88,28 @@ $buttonHeight: 128px;
 
 @keyframes open-top {
   0% {
-      top: 12px;
-      transform: rotate(45deg);
+    transform: rotate(-45deg) translate(0, 27px);
   }
   
   50% {
-      top: 12px;
-      transform: rotate(0deg);
+    transform: translate(0, 27px);
   }
   
   100% {
-      top: 4px;
+    transform: none;
   }
 }
 
 @keyframes open-bottom {
   0% {
-      top: 12px;
-      transform: rotate(-45deg);
+    transform: none;
   }
   
   50% {
-      top: 12px;
-      transform: rotate(0deg);
+    transform: translate(0, 27px);
   }
   
   100% {
-      top: 20px;
+    transform: rotate(45deg) translate(0, 27px);
   }
 }
