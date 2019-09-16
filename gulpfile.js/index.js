@@ -6,6 +6,7 @@ const embedSVG = require('gulp-embed-svg');
 const sass = require('gulp-sass');
 const webpack = require('webpack-stream');
 const server = require('browser-sync').create();
+const plumber = require('gulp-plumber');
 
 
 // Paths
@@ -63,6 +64,7 @@ const reloadServer = (cb) => {
  */
 const renderPug = (cb) => {
   gulp.src(dirs.pugMain)
+    .pipe(plumber())
     .pipe(pug())
     .pipe(embedSVG({
       root: './src/',
@@ -80,6 +82,7 @@ const renderPug = (cb) => {
  */
 const compileStyles = (cb) => {
   gulp.src(dirs.scssMain)
+    .pipe(plumber())
     .pipe(sass())
     .pipe(gulp.dest(dirs.docs))
     .pipe(server.reload({stream: true}));
@@ -94,6 +97,7 @@ const compileStyles = (cb) => {
  */
 const compileScripts = (cb) => {
   gulp.src(dirs.js)
+    .pipe(plumber)
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest(dirs.docs));
 

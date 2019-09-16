@@ -192,11 +192,29 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: both; }
 
+.menu-button__bottom {
+  animation-name: open-bottom;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both; }
+
+.menu-button__middle {
+  transition-delay: 0.25s; }
+
 .menu-button--close .menu-button__top {
   animation-name: close-top;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: both; }
+
+.menu-button--close .menu-button__bottom {
+  animation-name: close-bottom;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both; }
+
+.menu-button--close .menu-button__middle {
+  opacity: 0; }
 
 @keyframes close-top {
   0% {
@@ -206,16 +224,6 @@ body {
   100% {
     transform: rotate(-45deg) translate(0, 27px); } }
 
-@keyframes close-bottom {
-  0% {
-    top: 20px; }
-  50% {
-    top: 12px;
-    transform: rotate(0deg); }
-  100% {
-    top: 12px;
-    transform: rotate(-45deg); } }
-
 @keyframes open-top {
   0% {
     transform: rotate(-45deg) translate(0, 27px); }
@@ -224,10 +232,18 @@ body {
   100% {
     transform: none; } }
 
-@keyframes open-bottom {
+@keyframes close-bottom {
   0% {
     transform: none; }
   50% {
-    transform: translate(0, 27px); }
+    transform: translate(0, -27px); }
   100% {
-    transform: rotate(45deg) translate(0, 27px); } }
+    transform: rotate(45deg) translate(0, -27px); } }
+
+@keyframes open-bottom {
+  0% {
+    transform: rotate(45deg) translate(0, -27px); }
+  50% {
+    transform: translate(0, -27px); }
+  100% {
+    transform: none; } }
