@@ -14,7 +14,7 @@ const dirs = {
   pugMain: './src/pug/*.pug',
   pugAll: './src/pug/**/*.pug',
   svg: './src/img/**/*.svg',
-  scssMain: './src/scss/styles.scss',
+  scssMain: './src/scss/style.scss',
   scssAll: './src/scss/**/*.scss',
   js: './src/js/**/*.js',
   docs: './docs',
@@ -97,7 +97,7 @@ const compileStyles = (cb) => {
  */
 const compileScripts = (cb) => {
   gulp.src(dirs.js)
-    .pipe(plumber)
+    // .pipe(plumber)
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest(dirs.docs));
 

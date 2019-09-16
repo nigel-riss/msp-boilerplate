@@ -4,6 +4,7 @@ class MobileMenu {
 
     if (this.headerTop) {
       this.menuButton = this.headerTop.querySelector('.menu-button');
+      this.mainNav = this.headerTop.querySelector('.header__nav');
 
       this.resetDOM();
       this.addEventListeners();
@@ -22,7 +23,7 @@ class MobileMenu {
 
   toggleMenu() {
     this.menuButton.classList.toggle('menu-button--close');
-    console.log('menu toggle');
+    this.mainNav.classList.toggle('header__nav--closed');
   }
 }
 

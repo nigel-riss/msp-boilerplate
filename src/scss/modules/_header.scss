@@ -1,5 +1,6 @@
 .header {
-
+  // positioning
+  position: relative;
 }
 
 .header__top {
@@ -15,11 +16,18 @@
 }
 
 .header__nav {
+  // positioning
+  position: absolute;
+  top: 0;
 
+  // visual
+  transition: all 0.25s ease-out;
+  border: 2px dashed fuchsia;
 }
 
 .header__nav--closed {
-
+  // positioning
+  transform: translateY(-110%);
 }
 
 .header__menu-button {

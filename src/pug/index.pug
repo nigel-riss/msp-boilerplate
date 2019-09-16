@@ -5,7 +5,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
 
-        link(rel="stylesheet", href="styles.css")
+        link(rel="stylesheet", href="style.css")
 
         title MSP Boilerplate
 
@@ -15,13 +15,20 @@ html(lang="en")
                 .header__logo
                     img(src="./img/logo.svg", alt="Logo")
 
-                .header__nav
+                nav.header__nav.header__nav--closed
+                    ul.main-nav
+                        li.main-nav__item: a.main-nav__link(href="") Menu Item #1
+                        li.main-nav__item: a.main-nav__link(href="") Menu Item #2
+                        li.main-nav__item: a.main-nav__link(href="") Menu Item #3
+                        li.main-nav__item: a.main-nav__link(href="") Menu Item #4
+                        li.main-nav__item: a.main-nav__link(href="") Menu Item #5
 
                 button.header__menu-button ≡
                     img.menu-button(src="/img/icons/burger.svg", alt="Menu Burger", role="button")
 
             .header__content
                 h1.header__title My Standard Project Boilerplate
+                p.header__description This boilerplate can be used for fast site projects deployment
 
         main
 

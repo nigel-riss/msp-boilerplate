@@ -167,6 +167,18 @@ body {
   font-weight: 400;
   font-style: normal; }
 
+.header {
+  position: relative; }
+
+.header__nav {
+  position: absolute;
+  top: 0;
+  transition: all 0.25s ease-out;
+  border: 2px dashed fuchsia; }
+
+.header__nav--closed {
+  transform: translateY(-110%); }
+
 .header__menu-button {
   position: relative;
   padding: 0;
