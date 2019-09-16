@@ -4,6 +4,9 @@
   padding: 20px;
   padding-top: 100px;
 
+  // typography
+  font-size: 1rem;
+
   // visual
   background-color: rgba(172,131,241,1);
 
@@ -12,13 +15,20 @@
 }
 
 .main-nav__item {
-
+  // box model
 }
 
 .main-nav__link {
+  // box model
+  display: block;
+  padding: 0.5rem 0;
 
+  // typography
+  color: $light;
+  text-decoration: none;
 }
 
 .main-nav__link:hover {
-
+  // typography
+  text-decoration: underline;
 }

@@ -8,6 +8,9 @@
   height: 100vh;
   max-height: 720px;
 
+  // typography
+  color: #fff;
+
   // visual
   background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(246,133,133,1) 16.3%, rgba(172,131,241,1) 90%);
 
@@ -37,6 +40,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  // typography
+  font-size: 0;
 }
 
 .header__logo {
@@ -62,33 +68,21 @@
   top: 0;
   z-index: 4;
 
-  // box model
-
-
   // visual
+  opacity: 1;
   transition: all 0.25s ease-out;
 }
 
 .header__nav--closed {
   // positioning
   transform: translateY(-110%);
+
+  // visual
+  opacity: 0;
 }
 
 .header__menu-button {
   // positioning
   position: relative;
   z-index: 5;
-
-  // box model
-  padding: 0;
-
-  // typography
-  font-size: 0;
-
-  // visual
-  background-color: transparent;
-  cursor: pointer;
-
-  // border
-  border: none;
 }

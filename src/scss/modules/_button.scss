@@ -1,0 +1,25 @@
+$buttonHeigth: 42px;
+$buttonColor: $light;
+
+.button {
+  // box model
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0 30px;
+
+  // typography
+  color: $buttonColor;
+  line-height: $buttonHeigth;
+  text-decoration: none;
+
+  // border
+  border: solid 1px rgba($buttonColor, 0.5);
+  border-radius: $buttonHeigth / 2 + 2px;
+}
+
+.button:hover {
+
+  // visual
+  background-color: rgba($buttonColor, 0.5);
+}

@@ -15,12 +15,19 @@ $barColor: $light;
   // box model
   height: $barHeight * 7;
   width: $barWidth;
+  padding: 0;
+
+  // typography
+  font-size: 0;
 
   // visual
+  background-color: transparent;
   cursor: pointer;
   outline: none;
-}
 
+  // border
+  border: none;
+}
 
 .menu-button:before {
   content: "";
@@ -43,6 +50,9 @@ $barColor: $light;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: both;
+
+  // border
+  border-radius: $barHeight / 2;
 }
 
 .menu-button__middle {
@@ -62,6 +72,9 @@ $barColor: $light;
   background-color: $barColor;
   opacity: 1;
   transition-delay: 0.25s;
+
+  // border
+  border-radius: $barHeight / 2;
 }
 
 .menu-button::after {
@@ -85,6 +98,9 @@ $barColor: $light;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: both;
+
+  // border
+  border-radius: $barHeight / 2;
 }
 
 .menu-button--close::before {
