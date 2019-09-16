@@ -1,5 +1,10 @@
 .main-nav {
+  // box model
+  margin: 0;
+  padding: 0;
 
+  // visual
+  background-color: rgba(172,131,241,1);
 }
 
 .main-nav__item {

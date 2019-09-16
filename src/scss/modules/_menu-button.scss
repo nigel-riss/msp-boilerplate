@@ -1,8 +1,11 @@
 
 
 // Vars
-$buttonWidth: 128px;
-$buttonHeight: 128px;
+$barHeight: 3px;
+$barWidth: 30px;
+$barColor: $light;
+// $buttonWidth: 128px;
+// $buttonHeight: 128px;
 
 
 .menu-button {
@@ -10,21 +13,30 @@ $buttonHeight: 128px;
   position: relative;
 
   // box model
-  height: $buttonHeight;
-  width: $buttonWidth;
+  height: $barHeight * 7;
+  width: $barWidth;
 
-  // border: 2px dashed fuchsia;
+  // visual
+  cursor: pointer;
 }
 
-.menu-button__top,
-.menu-button__middle,
-.menu-button__bottom {
+
+.menu-button:before {
+  content: "";
+
   // positioning
   position: absolute;
-  transform-origin: center center;
-}
+  transform-origin: 50% 50%;
+  left: 0;
+  top: 0;
 
-.menu-button__top {
+  // box model
+  height: $barHeight;
+  width: $barWidth;
+
+  // visual
+  background-color: $barColor;
+
   // animation
   animation-name: open-top;
   animation-duration: 0.5s;
@@ -32,7 +44,41 @@ $buttonHeight: 128px;
   animation-fill-mode: both;
 }
 
-.menu-button__bottom {
+.menu-button__middle {
+  content: "";
+
+  // positioning
+  position: absolute;
+  transform-origin: 50% 50%;
+  left: 0;
+  top: $barHeight * 3;
+
+  // box model
+  height: $barHeight;
+  width: $barWidth;
+
+  // visual
+  background-color: $barColor;
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+
+.menu-button::after {
+  content: "";
+
+  // positioning
+  position: absolute;
+  transform-origin: 50% 50%;
+  left: 0;
+  top: $barHeight * 6;
+
+  // box model
+  height: $barHeight;
+  width: $barWidth;
+
+  // visual
+  background-color: $barColor;
+
   // animation
   animation-name: open-bottom;
   animation-duration: 0.5s;
@@ -40,33 +86,27 @@ $buttonHeight: 128px;
   animation-fill-mode: both;
 }
 
-.menu-button__middle {
+.menu-button--close::before {
+  // animation
+  animation-name: close-top;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.menu-button--close .menu-button__middle {
   // visual
-  transition-delay: 0.25s;
+  opacity: 0;
 }
 
-.menu-button--close {
-  .menu-button__top {
-      // animation
-      animation-name: close-top;
-      animation-duration: 0.5s;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-  }
-
-  .menu-button__bottom {
-      // animation
-      animation-name: close-bottom;
-      animation-duration: 0.5s;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-  }
-
-  .menu-button__middle {
-    // visual
-    opacity: 0;
-  }
+.menu-button--close::after {
+    // animation
+    animation-name: close-bottom;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
 }
+
 
 // Menu button animations
 @keyframes close-top {
@@ -75,21 +115,21 @@ $buttonHeight: 128px;
   }
   
   50% {
-    transform: translate(0, 27px);
+    transform: translate(0, $barHeight * 3);
   }
   
   100% {
-    transform: rotate(-45deg) translate(0, 27px);
+    transform: translate(0, $barHeight * 3) rotate(45deg);
   }
 }
 
 @keyframes open-top {
   0% {
-    transform: rotate(-45deg) translate(0, 27px);
+    transform: translate(0, $barHeight * 3) rotate(45deg);
   }
   
   50% {
-    transform: translate(0, 27px);
+    transform: translate(0, $barHeight * 3);
   }
   
   100% {
@@ -103,21 +143,21 @@ $buttonHeight: 128px;
   }
   
   50% {
-    transform: translate(0, -27px);
+    transform: translate(0, -$barHeight * 3);
   }
   
   100% {
-    transform: rotate(45deg) translate(0, -27px);
+    transform: translate(0, -$barHeight * 3) rotate(-45deg);
   }
 }
 
 @keyframes open-bottom {
   0% {
-    transform: rotate(45deg) translate(0, -27px);
+    transform: translate(0, -$barHeight * 3) rotate(-45deg);
   }
   
   50% {
-    transform: translate(0, -27px);
+    transform: translate(0, -$barHeight * 3);
   }
   
   100% {

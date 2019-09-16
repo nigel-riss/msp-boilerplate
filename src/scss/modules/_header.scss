@@ -1,28 +1,45 @@
 .header {
   // positioning
   position: relative;
+
+  // box model
+  padding: 20px;
+  min-height: 90vh;
+
+  // visual
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(246,133,133,1) 16.3%, rgba(172,131,241,1) 90%);
 }
 
 .header__top {
-
+  // box model
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__logo {
-
+  // box model
+  width: 64px;
 }
 
 .header__logo svg {
-
+  // box model
+  height: 100%;
+  width: 100%;
 }
 
 .header__nav {
   // positioning
   position: absolute;
+  left: 0;
+  right: 0;
   top: 0;
+
+  // box model
+
 
   // visual
   transition: all 0.25s ease-out;
-  border: 2px dashed fuchsia;
 }
 
 .header__nav--closed {
@@ -47,5 +64,3 @@
   // border
   border: none;
 }
-
-// background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(246,133,133,1) 16.3%, rgba(172,131,241,1) 90% );
