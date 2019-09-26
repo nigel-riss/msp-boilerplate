@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/nigel-riss/msp-boilerplate#readme",
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-embed-svg": "^1.1.5",
