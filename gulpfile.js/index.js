@@ -6,7 +6,6 @@ const embedSVG = require('gulp-embed-svg');
 const sass = require('gulp-sass');
 const webpack = require('webpack-stream');
 const server = require('browser-sync').create();
-const plumber = require('gulp-plumber');
 
 
 // Paths
@@ -64,11 +63,16 @@ const reloadServer = (cb) => {
  */
 const renderPug = (cb) => {
   gulp.src(dirs.pugMain)
-    .pipe(plumber())
     .pipe(pug())
+    .on('error', (error) => {
+      console.log("\x1b[31m", error.message, "\x1b[0m");
+    })
     .pipe(embedSVG({
       root: './src/',
     }))
+    .on('error', (error) => {
+      console.log("\x1b[31m", error.message, "\x1b[0m");
+    })
     .pipe(gulp.dest(dirs.docs));
 
     cb();
@@ -82,8 +86,10 @@ const renderPug = (cb) => {
  */
 const compileStyles = (cb) => {
   gulp.src(dirs.scssMain)
-    .pipe(plumber())
     .pipe(sass())
+    .on('error', (error) => {
+      console.log("\x1b[31m", error.message, "\x1b[0m");
+    })
     .pipe(gulp.dest(dirs.docs))
     .pipe(server.reload({stream: true}));
 
@@ -99,6 +105,9 @@ const compileScripts = (cb) => {
   gulp.src(dirs.js)
     // .pipe(plumber)
     .pipe(webpack(webpackConfig))
+    .on('error', (error) => {
+      console.log("\x1b[31m", error.message, "\x1b[0m");
+    })
     .pipe(gulp.dest(dirs.docs));
 
   cb();
